@@ -1,10 +1,8 @@
 {
     "@context": [
-        "https://www.w3.org/2022/wot/td/v1.1"
+        "https://www.w3.org/2022/wot/td/v1"
     ],
-    "@type": [
-        "tm:ThingModel"
-    ],
+    "@type": "tm:ThingModel",
     "title": "John's Home",
     "description": "John's home in Winter Haven with 2 floors, with temperature sensors in both floors.",
     "version": {
@@ -12,33 +10,53 @@
         "instance": "1.0.0"
     },
     "links": [
-    {
-      "rel": "tm:submodel",
-      "href": "hhttps://raw.githubusercontent.com/eclipse-ditto/ditto-examples/master/wot/models/sensors/temperature-sensor-1.0.0.tm.jsonld",
-      "type": "application/tm+json",
-      "instanceName": "Temperature_sensor_1st_floor"
+        {
+            "rel": "tm:submodel",
+            "href": "https://raw.githubusercontent.com/eclipse-ditto/ditto-examples/master/wot/models/sensors/temperature-sensor-1.0.0.tm.jsonld",
+            "type": "application/tm+json",
+            "instanceName": "Temperature_sensor_1st_floor"
+        },
+        {
+            "rel": "tm:submodel",
+            "href": "https://raw.githubusercontent.com/eclipse-ditto/ditto-examples/master/wot/models/sensors/temperature-sensor-1.0.0.tm.jsonld",
+            "type": "application/tm+json",
+            "instanceName": "Temperature_sensor_2nd_floor"
+        }
+    ],
+    "properties": {
+        "manufacturer": {
+            "title": "Manufacturer",
+            "type": "string",
+            "const": "Fab-Lab.eu",
+            "readOnly": true,
+            "observable": false,
+            "forms": [
+                {
+                    "href": "",
+                    "mediaType": "application/json"
+                }
+            ]
+        },
+        "Address": {
+            "title": "Address",
+            "type": "string",
+            "const": "3764 Bernardo St, Winter Haven, Florida 33830",
+            "readOnly": true,
+            "observable": false,
+            "forms": [
+                {
+                    "href": "",
+                    "mediaType": "application/json"
+                }
+            ]
+        }
     },
-    {
-      "rel": "tm:submodel",
-      "href": "https://raw.githubusercontent.com/eclipse-ditto/ditto-examples/master/wot/models/sensors/temperature-sensor-1.0.0.tm.jsonld",
-      "type": "application/tm+json",
-      "instanceName": "Temperature_sensor_2nd_floor"
-    },
-  "tm:optional": [],
-  "properties": {
-    "manufacturer": {
-      "title": "Manufacturer",
-      "type": "string",
-      "const": "Fab-Lab.eu",
-      "readOnly": true,
-      "observable": false
-    },
-    "Address": {
-      "title": "Address",
-      "type": "string",
-      "const": "3764 Bernardo St, Winter Haven, Florida 33830",
-      "readOnly": true,
-      "observable": false
+    "actions": {},
+    "events": {},
+    "security": "basic_sc",
+    "securityDefinitions": {
+        "basic_sc": {
+            "scheme": "basic"
+        }
     }
-  }
 }
