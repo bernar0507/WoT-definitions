@@ -37,7 +37,7 @@
                 }
             ]
         },
-        "Address": {
+        "address": {
             "title": "Address",
             "type": "string",
             "const": "3764 Bernardo St, Winter Haven, Florida 33830",
@@ -49,6 +49,22 @@
                     "mediaType": "application/json"
                 }
             ]
+        },
+        "timestamp": {
+            "title": "Timestamp",
+            "description": "Timestamp of when the data was recorded",
+            "type": "string",
+            "format": "date-time",
+            "default": "1970-01-01T00:00:00.000Z",
+            "observable": true,
+            "readOnly": false,
+            "writeOnly": false,
+            "forms": [
+                {
+                    "href": "",
+                    "mediaType": "application/json"
+                }
+            ]  
         }
     },
     "actions": {},
